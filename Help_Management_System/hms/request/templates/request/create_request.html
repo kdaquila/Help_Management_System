@@ -13,7 +13,7 @@
     {% include 'request/partials/_header__nav.html' %}
     {% include 'request/partials/_header__login-status.html' %}
 </header>
-<form class="form" action="{% url 'edit_request' %}" method="post">
+<form class="form" action="{% url 'create_request' %}" method="post">
     {% if request.id %}
         <input type="hidden" name="request_id" value="{{ request.id }}">
     {% endif %}
@@ -25,7 +25,7 @@
     {% include 'request/partials/_form__details-section.html' %}
     {% include 'request/partials/_form__response-section.html' %}
     <div class="form__buttons-container">
-        <button class="form__submit-button" type="submit">Save Changes</button>
+        <button class="form__submit-button" type="submit">Create Request</button>
         <a class="form__cancel-button" href="{% url 'dashboard' %}">Cancel</a>
     </div>
     {% include 'request/partials/_form__submit-warning.html' %}

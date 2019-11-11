@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cd851fe4-d192-483c-962f-a2f500e4d452" name="Default Changelist" comment="" />
+    <list default="true" id="cd851fe4-d192-483c-962f-a2f500e4d452" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Help_Management_System.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Help_Management_System.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hms/hms/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/hms/hms/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hms/request/templates/request/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/hms/request/templates/request/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hms/request/templates/request/edit_request.html" beforeDir="false" afterPath="$PROJECT_DIR$/hms/request/templates/request/edit_request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hms/request/templates/request/partials/_header__nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/hms/request/templates/request/partials/_header__nav.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hms/request/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/hms/request/views.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,12 +49,16 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="InvalidFacetManager">
     <ignored-facets>
       <facet id="Help_Management_System/invalid/Django" />
     </ignored-facets>
   </component>
   <component name="ProjectId" id="1T4FWhYv3mDfNPyE4yDxizJiUMs" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -56,7 +68,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/hms/hms/settings.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/hms/request/templates/request" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -67,16 +79,16 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\OneDrive\kdaquila_SoftwareDev\Help_Management_System\Help_Management_System\hms\request\templates\request" />
-      <recent name="F:\OneDrive\kdaquila_SoftwareDev\Help_Management_System\Help_Management_System\img" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\OneDrive\kdaquila_SoftwareDev\Help_Management_System\Help_Management_System\hms\hms" />
       <recent name="F:\OneDrive\kdaquila_SoftwareDev\Help_Management_System\Help_Management_System\templates" />
       <recent name="F:\OneDrive\kdaquila_SoftwareDev\Help_Management_System\Help_Management_System\scss\pages" />
       <recent name="F:\OneDrive\kdaquila_SoftwareDev\Help_Management_System\Help_Management_System\scss\pages\login" />
       <recent name="F:\OneDrive\kdaquila_SoftwareDev\Help_Management_System\Help_Management_System\scss\site" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\OneDrive\kdaquila_SoftwareDev\Help_Management_System\Help_Management_System\hms\request\templates\request" />
+      <recent name="F:\OneDrive\kdaquila_SoftwareDev\Help_Management_System\Help_Management_System\img" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -116,11 +128,23 @@
       <workItem from="1573316228397" duration="343000" />
       <workItem from="1573316590875" duration="46800000" />
       <workItem from="1573492679131" duration="1728000" />
+      <workItem from="1573496771647" duration="6242000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="-1037" y="189" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1572760953618">

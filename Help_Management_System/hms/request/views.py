@@ -19,6 +19,182 @@ def about(request):
         return redirect('access_denied')
 
 
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
+def dashboard(request):
+    # authenticate
+    if not check_logged_in(request):
+        return redirect('access_denied')
+
+    # get user
+    user = User.objects.get(id=request.session.get("user_id"))
+
+    # get requests
+    context = {}
+    if user.role == "user":
+        context = {
+            'full_name': User.objects.get(id=request.session['user_id']).fullname,
+            'requests': user.request_set.all(),
+            'active_requests': user.request_set.filter(active="True"),
+            'inactive_requests': user.request_set.filter(active="False"),
+        }
+    elif user.role == "admin":
+        context = {
+            'full_name': User.objects.get(id=request.session['user_id']).fullname,
+            'requests': Request.objects.all(),
+            'active_requests': Request.objects.filter(active="True"),
+            'inactive_requests': Request.objects.filter(active="False"),
+        }
+    return render(request, "request/dashboard.html", context)
+
+
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
+def create_request(request):
+    # authenticate
+    if not check_logged_in(request):
+        return redirect('access_denied')
+
+    # get user
+    user = User.objects.get(id=request.session.get("user_id"))
+
+    # handle new requests
+    if request.method == 'GET':
+        context = {
+            'group_id': user.group.name,
+            'tags': [x.name for x in Tag.objects.all()],
+        }
+        return render(request, "request/create_request.html", context)
+
+    if request.method == 'POST':
+        try:
+            new_request = Request(
+                status=request.POST.get("requestStatus", None),
+                title=request.POST.get("request-title", None),
+                request_message=request.POST.get("request-message", None),
+                requester=user,
+                group=user.group,
+                response_message=request.POST.get("response-message", None),
+            )
+            new_request.clean()
+            new_request.save()
+            new_tags = [Tag.objects.get(name=tag_name) for tag_name in request.POST.getlist("details-tags", None)]
+            new_request.tags.set(new_tags)
+            return redirect('dashboard')
+        except ValidationError as error:
+            context = {
+                'group_id': user.group.name,
+                'tags': [x.name for x in Tag.objects.all()],
+                'error_message': error.message
+            }
+            return render(request, "request/create_request.html", context)
+
+
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
+def edit_request(request):
+    # authenticate
+    if not check_logged_in(request):
+        return redirect('access_denied')
+
+    # get user
+    user = User.objects.get(id=request.session.get("user_id"))
+
+    # get the existing request
+    request_object = Request.objects.get(id=request.GET.get('request_id', None))
+
+    if request.method == "GET":
+        # Populate the form
+        context = {
+            'group_id': user.group.name,
+            'tags': [x.name for x in Tag.objects.all()],
+            'full_name': User.objects.get(id=request.session['user_id']).fullname,
+            'request': request_object,
+            'request_tags_names': [x.name for x in request_object.tags.all()]
+        }
+        return render(request, "request/edit_request.html", context)
+
+    elif request.method == "POST":
+        try:
+            # Update all request fields
+            request_object.title = request.POST.get("request-title", None)
+            request_object.status = request.POST.get("requestStatus", None)
+            request_object.request_message = request.POST.get("request-message", None)
+            request_object.response_message = request.POST.get("response-message", None)
+            new_tags = [Tag.objects.get(name=tag_name) for tag_name in request.POST.getlist("details-tags", None)]
+            request_object.tags.set(new_tags)
+            request_object.clean()
+            request_object.save()
+            return redirect('dashboard')
+        except ValidationError as error:
+            context = {
+                'error_message': error.message,
+            }
+            return render(request, "request/edit_request.html", context)
+
+
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
+def delete_request(request):
+    # authenticate
+    if not check_logged_in(request):
+        return redirect('access_denied')
+
+    # get user
+    user = User.objects.get(id=request.session.get("user_id"))
+
+    # find the existing request
+    request_object = Request.objects.get(id=request.POST.get('request_id', None))
+
+    # delete existing request
+    if request.POST.get("delete_request", None) == "True":
+        request_object.delete()
+        return redirect('dashboard')
+
+
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
+def activate_request(request):
+    # authenticate
+    if not check_logged_in(request):
+        return redirect('access_denied')
+
+    # get user
+    user = User.objects.get(id=request.session.get("user_id"))
+
+    # find the existing request
+    request_object = Request.objects.get(id=request.POST.get('request_id', None))
+
+    # activate existing request
+    if request.POST.get("activate_request", None) == "True":
+        request_object.active = "True"
+        request_object.save()
+        return redirect('dashboard')
+
+
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
+def deactivate_request(request):
+    # authenticate
+    if not check_logged_in(request):
+        return redirect('access_denied')
+
+    # get user
+    user = User.objects.get(id=request.session.get("user_id"))
+
+    # find the existing request
+    request_object = Request.objects.get(id=request.POST.get('request_id', None))
+
+    # deactivate existing requests
+    if request.POST.get("deactivate_request", None) == "True":
+        request_object.active = "False"
+        request_object.save()
+        return redirect('dashboard')
+
+
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
+def logout(request):
+    if check_logged_in(request):
+        do_logout(request)
+        return render(request, "request/logout.html")
+    else:
+        return redirect('access_denied')
+
+
 def create_account(request):
     if request.method == 'GET':
         return render(request, "request/create_account.html")
@@ -52,34 +228,6 @@ def create_account(request):
             return render(request, "request/create_account.html", context)
 
 
-@cache_control(no_cache=True, must_revalidate=True, no_store=True)
-def dashboard(request):
-    # authenticate
-    if not check_logged_in(request):
-        return redirect('access_denied')
-
-    # get user
-    user = User.objects.get(id=request.session.get("user_id"))
-
-    # get requests
-    context = {}
-    if user.role == "user":
-        context = {
-            'full_name': User.objects.get(id=request.session['user_id']).fullname,
-            'requests': user.request_set.all(),
-            'active_requests': user.request_set.filter(active="True"),
-            'inactive_requests': user.request_set.filter(active="False"),
-        }
-    elif user.role == "admin":
-        context = {
-            'full_name': User.objects.get(id=request.session['user_id']).fullname,
-            'requests': Request.objects.all(),
-            'active_requests': Request.objects.filter(active="True"),
-            'inactive_requests': Request.objects.filter(active="False"),
-        }
-    return render(request, "request/dashboard.html", context)
-
-
 def login(request):
     if request.method == 'GET':
         return render(request, "request/login.html")
@@ -91,128 +239,6 @@ def login(request):
                 'error_message': "Invalid credentials"
             }
             return render(request, "request/login.html", context)
-
-
-@cache_control(no_cache=True, must_revalidate=True, no_store=True)
-def edit_request(request):
-    # authenticate
-    if not check_logged_in(request):
-        return redirect('access_denied')
-
-    # get user
-    user = User.objects.get(id=request.session.get("user_id"))
-
-    # handle new requests
-    is_new_request = request.POST.get('request_id', None) is None
-    if is_new_request:
-        if request.method == 'GET':
-            context = {
-                'group_id': user.group.name,
-                'tags': [x.name for x in Tag.objects.all()],
-            }
-            return render(request, "request/edit_request.html", context)
-
-        if request.method == 'POST':
-            try:
-                print("request status: " + str(request.POST.get("requestStatus", None)))
-                new_request = Request(
-                    status=request.POST.get("requestStatus", None),
-                    title=request.POST.get("request-title", None),
-                    request_message=request.POST.get("request-message", None),
-                    requester=user,
-                    group=user.group,
-                    response_message=request.POST.get("response-message", None),
-                )
-                new_request.clean()
-                new_request.save()
-                new_tags = [Tag.objects.get(name=tag_name) for tag_name in request.POST.getlist("details-tags", None)]
-                new_request.tags.set(new_tags)
-                return redirect('dashboard')
-            except ValidationError as error:
-                context = {
-                    'group_id': user.group.name,
-                    'tags': [x.name for x in Tag.objects.all()],
-                    'error_message': error.message
-                }
-                return render(request, "request/edit_request.html", context)
-
-    # handle existing requests
-    else:
-        request_object = Request.objects.get(id=request.POST.get('request_id', None))
-
-        if request.POST.get("delete_request", None) == "True":
-            request_object.delete()
-            return redirect('dashboard')
-
-        if request.POST.get("deactivate_request", None) == "True":
-            request_object.active = "False"
-            request_object.save()
-            return redirect('dashboard')
-
-        if request.POST.get("activate_request", None) == "True":
-            request_object.active = "True"
-            request_object.save()
-            return redirect('dashboard')
-
-        context = {
-            'group_id': user.group.name,
-            'tags': [x.name for x in Tag.objects.all()],
-            'full_name': User.objects.get(id=request.session['user_id']).fullname,
-            'request': request_object,
-            'request_tags_names': [x.name for x in request_object.tags.all()]
-        }
-
-        has_changed = False
-
-        request_status_submitted = request.POST.get("requestStatus", None)
-        if request_status_submitted != request_object.status and request_status_submitted is not None:
-            has_changed = True
-
-        request_tag_names_submitted = request.POST.getlist("details-tags", None)
-        print("tag stuff:")
-        print(request_tag_names_submitted)
-        print([x.name for x in request_object.tags.all()])
-        if request_tag_names_submitted != [x.name for x in request_object.tags.all()] and request_tag_names_submitted != []:
-            has_changed = True
-
-        request_title_submitted = request.POST.get("request-title", None)
-        if request_title_submitted != request_object.title and request_title_submitted is not None:
-            has_changed = True
-
-        request_message_submitted = request.POST.get("request-message", None)
-        if request_message_submitted != request_object.request_message and request_message_submitted is not None:
-            has_changed = True
-
-        response_message_submitted = request.POST.get("response-message", None)
-        if response_message_submitted != request_object.response_message and response_message_submitted is not None:
-            has_changed = True
-
-        if has_changed:
-            try:
-                request_object.title = request_title_submitted
-                request_object.status = request_status_submitted
-                request_object.request_message = request_message_submitted
-                request_object.response_message = response_message_submitted
-                new_tags = [Tag.objects.get(name=tag_name) for tag_name in request_tag_names_submitted]
-                request_object.tags.set(new_tags)
-                request_object.clean()
-                request_object.save()
-                return redirect('dashboard')
-            except ValidationError as error:
-                context['error_message'] = error.message
-                return render(request, "request/edit_request.html", context)
-        else:
-            print("doing nothing")
-            return render(request, "request/edit_request.html", context)
-
-
-@cache_control(no_cache=True, must_revalidate=True, no_store=True)
-def logout(request):
-    if check_logged_in(request):
-        do_logout(request)
-        return render(request, "request/logout.html")
-    else:
-        return redirect('access_denied')
 
 
 def page_not_found(request):

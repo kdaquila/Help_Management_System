@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HMS - Create Account</title>
+    <link rel="stylesheet" href="../css/pages/createAccount.css">
+    <link rel="shortcut icon" href="../img/favicon.ico" />
+</head>
+<body>
+<header class="header">
+    <a class="header__logo" href="login.html" >
+        <h1 class="header__logo-heading">HMS</h1>
+        <h2 class="header__logo-subHeading">Help Management System</h2>
+        <svg class="header__logo-art-group"
+             viewBox="0 0 424 26">
+            <path class="header__logo-art-line" d="M422.683,12.938l-421.683,0"/>
+            <path class="header__logo-art-diamond" d="M211.842,0l24.75,12.938l-24.75,12.938l-24.75,-12.938l24.75,-12.938Z"/>
+        </svg>
+    </a>
+</header>
+<form class="form" action="" method="post">
+    <section class="form__new-account-section" >
+        <h1 class="form__new-account-title">Create an Account</h1>
+        <div class="form__new-account-grid">
+            <label class="form__new-account-label" for="groupID">Group ID</label>
+            <input class="form__new-account-text-input" type="text" name="groupID" id="groupID">
+
+            <label class="form__new-account-label" for="fullname">Full Name</label>
+            <input class="form__new-account-text-input" type="text" name="fullname" id="fullname">
+
+            <label class="form__new-account-label" for="email">Email Address</label>
+            <input class="form__new-account-text-input" type="text" name="email" id="email">
+
+            <label class="form__new-account-label" for="password">New Password</label>
+            <input class="form__new-account-text-input" type="password" name="password" id="password">
+
+            <label class="form__new-account-label" for="confirmPassword">Confirm Password</label>
+            <input class="form__new-account-text-input" type="password" name="confirmPassword" id="confirmPassword">
+        </div>
+    </section>
+    <div class="form__buttons-container">
+        <button class="form__submit-button" type="submit">Submit</button>
+        <a class="form__cancel-button" href="login.html">Cancel</a>
+    </div>
+</form>
+<footer class="footer">
+    <div class="footer__copyright">
+        <p>© 2019 Help Management System. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>

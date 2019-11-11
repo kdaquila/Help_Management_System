@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HMS - Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'request/css/pages/dashboard.css' %}">
+    <link rel="shortcut icon" href="{% static 'request/img/favicon.ico'%}" />
+</head>
+<body>
+<header class="header">
+    {% include 'request/partials/_header__logo.html' %}
+    {% include 'request/partials/_header__nav.html' %}
+    {% include 'request/partials/_header__login-status.html' %}
+</header>
+<section class="requests">
+    <h1 class="requests__heading">Active Requests</h1>
+    <div class="requests__grid">
+        <!-- Column Headers -->
+        <div class="requests__item-box">
+            <h1 class="requests__column-headings">Status</h1>
+        </div>
+        <div class="requests__item-box">
+            <h1 class="requests__column-headings">Tags</h1>
+        </div>
+        <div class="requests__item-box">
+            <h1 class="requests__column-headings">Title</h1>
+        </div>
+        <div class="requests__item-box">
+            <h1 class="requests__column-headings">Requester</h1>
+        </div>
+        <div class="requests__item-box">
+            <h1 class="requests__column-headings">Created</h1>
+        </div>
+        <div class="requests__item-box">
+            <h1 class="requests__column-headings">Group</h1>
+        </div>
+        <div class="requests__item-box">
+            <h1 class="requests__column-headings">Actions</h1>
+        </div>
+
+        {% for request in active_requests %}
+        <!-- New Row -->
+        <div class="requests__item-box">
+            <h2 class="active-requests__item-heading">{{request.status}}</h2>
+        </div>
+        <ul class="requests__item-box">
+            {% for tag in request.tags.all %}
+            <li class="active-requests__item-heading">{{tag.name}}</li>
+            {% endfor %}
+        </ul>
+        <div class="requests__item-box">
+            <h2 class="active-requests__item-heading">{{request.title}}</h2>
+        </div>
+        <div class="requests__item-box">
+            <h2 class="active-requests__item-heading">{{request.requester}}</h2>
+        </div>
+        <div class="requests__item-box">
+            <h2 class="active-requests__item-heading">{{request.created_on}}</h2>
+        </div>
+        <div class="requests__item-box">
+            <h2 class="active-requests__item-heading">{{request.group}}</h2>
+        </div>
+        <ul class="requests__item-box">
+            <li>
+                <form action="{% url 'edit_request' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="request_id" value="{{ request.id }}">
+                    <input class="active-requests__action-link" type="submit" value="edit">
+                </form>
+            </li>
+            <li>
+                <form action="{% url 'edit_request' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="delete_request" value="True">
+                    <input type="hidden" name="request_id" value="{{ request.id }}">
+                    <input class="active-requests__action-link" type="submit" value="delete">
+                </form>
+            </li>
+            <li>
+                <form action="{% url 'edit_request' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="deactivate_request" value="True">
+                    <input type="hidden" name="request_id" value="{{ request.id }}">
+                    <input class="active-requests__action-link" type="submit" value="mark inactive">
+                </form>
+            </li>
+        </ul>
+        {% endfor %}
+    </div>
+</section>
+<section class="requests">
+    <h1 class="requests__heading--inactive">Inactive Requests</h1>
+    <div class="requests__grid">
+        <!-- Column Headers -->
+        <div class="requests__item-box">
+            <h1 class="requests__column-headings">Status</h1>
+        </div>
+        <div class="requests__item-box">
+            <h1 class="requests__column-headings">Tags</h1>
+        </div>
+        <div class="requests__item-box">
+            <h1 class="requests__column-headings">Title</h1>
+        </div>
+        <div class="requests__item-box">
+            <h1 class="requests__column-headings">Requester</h1>
+        </div>
+        <div class="requests__item-box">
+            <h1 class="requests__column-headings">Created</h1>
+        </div>
+        <div class="requests__item-box">
+            <h1 class="requests__column-headings">Group</h1>
+        </div>
+        <div class="requests__item-box">
+            <h1 class="requests__column-headings">Actions</h1>
+        </div>
+
+        {% for request in inactive_requests %}
+        <!-- New Row -->
+        <div class="requests__item-box">
+            <h2 class="active-requests__item-heading--inactive">{{request.status}}</h2>
+        </div>
+        <ul class="requests__item-box">
+            {% for tag in request.tags.all %}
+            <li class="active-requests__item-heading--inactive">{{tag.name}}</li>
+            {% endfor %}
+        </ul>
+        <div class="requests__item-box">
+            <h2 class="active-requests__item-heading--inactive">{{request.title}}</h2>
+        </div>
+        <div class="requests__item-box">
+            <h2 class="active-requests__item-heading--inactive">{{request.requester}}</h2>
+        </div>
+        <div class="requests__item-box">
+            <h2 class="active-requests__item-heading--inactive">{{request.created_on}}</h2>
+        </div>
+        <div class="requests__item-box">
+            <h2 class="active-requests__item-heading--inactive">{{request.group}}</h2>
+        </div>
+        <ul class="requests__item-box">
+            <li>
+                <form action="{% url 'edit_request' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="request_id" value="{{ request.id }}">
+                    <input class="active-requests__action-link" type="submit" value="edit">
+                </form>
+            </li>
+            <li>
+                <form action="{% url 'edit_request' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="delete_request" value="True">
+                    <input type="hidden" name="request_id" value="{{ request.id }}">
+                    <input class="active-requests__action-link" type="submit" value="delete">
+                </form>
+            </li>
+            <li>
+                <form action="{% url 'edit_request' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="activate_request" value="True">
+                    <input type="hidden" name="request_id" value="{{ request.id }}">
+                    <input class="active-requests__action-link" type="submit" value="mark active">
+                </form>
+            </li>
+        </ul>
+        {% endfor %}
+    </div>
+</section>
+{% include 'request/partials/_footer.html' %}
+</body>
+</html>

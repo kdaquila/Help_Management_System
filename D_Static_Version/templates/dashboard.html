@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HMS - Dashboard</title>
+    <link rel="stylesheet" href="../css/pages/dashboard.css">
+    <link rel="shortcut icon" href="../img/favicon.ico" />
+</head>
+<body>
+<header class="header">
+    <a class="header__logo" href="login.html" >
+        <h1 class="header__logo-heading">HMS</h1>
+        <h2 class="header__logo-subHeading">Help Management System</h2>
+        <svg class="header__logo-art-group"
+             viewBox="0 0 424 26">
+            <path class="header__logo-art-line" d="M422.683,12.938l-421.683,0"/>
+            <path class="header__logo-art-diamond" d="M211.842,0l24.75,12.938l-24.75,12.938l-24.75,-12.938l24.75,-12.938Z"/>
+        </svg>
+    </a>
+    <ul class="header__nav">
+        <li class="header__nav-item"><a href="dashboard.html">Dashboard</a></li>
+        <li class="header__nav-item"><a href="about.html">About</a></li>
+        <li class="header__nav-item"><a href="request.html">New Request</a></li>
+    </ul>
+    <div class="header-login-status">
+        <h1 class="header-login-status__message">Welcome Kenneth!</h1>
+        <a class="header-login-status__logout-button" href="login.html">Logout</a>
+    </div>
+</header>
+<section class="requests">
+    <h1 class="requests__heading">Active Requests</h1>
+    <div class="requests__grid">
+        <!-- Column Headers -->
+        <div class="requests__item-box">
+            <h1 class="requests__column-headings">Status</h1>
+        </div>
+        <div class="requests__item-box">
+            <h1 class="requests__column-headings">Tags</h1>
+        </div>
+        <div class="requests__item-box">
+            <h1 class="requests__column-headings">Title</h1>
+        </div>
+        <div class="requests__item-box">
+            <h1 class="requests__column-headings">Requester</h1>
+        </div>
+        <div class="requests__item-box">
+            <h1 class="requests__column-headings">Created</h1>
+        </div>
+        <div class="requests__item-box">
+            <h1 class="requests__column-headings">Group</h1>
+        </div>
+        <div class="requests__item-box">
+            <h1 class="requests__column-headings">Actions</h1>
+        </div>
+
+        <!-- New Row -->
+        <div class="requests__item-box">
+            <h2 class="active-requests__item-heading">Pending Review</h2>
+        </div>
+        <ul class="requests__item-box">
+            <li class="active-requests__item-heading">Lecture Absence</li>
+            <li class="active-requests__item-heading">Lab Absence</li>
+        </ul>
+        <div class="requests__item-box">
+            <h2 class="active-requests__item-heading">I had to go the the doctor</h2>
+        </div>
+        <div class="requests__item-box">
+            <h2 class="active-requests__item-heading">Tim Green</h2>
+        </div>
+        <div class="requests__item-box">
+            <h2 class="active-requests__item-heading">Oct-10-2019</h2>
+        </div>
+        <div class="requests__item-box">
+            <h2 class="active-requests__item-heading">Oakton PHY131 D'Aquila</h2>
+        </div>
+        <ul class="requests__item-box">
+            <li><a class="active-requests__action-link" href="request.html">edit</a></li>
+            <li><a class="active-requests__action-link" href="dashboard.html">delete</a></li>
+            <li><a class="active-requests__action-link" href="dashboard.html">mark inactive</a></li>
+        </ul>
+
+        <!-- New Row -->
+        <div class="requests__item-box">
+            <h2 class="active-requests__item-heading">Pending Response</h2>
+        </div>
+        <ul class="requests__item-box">
+            <li class="active-requests__item-heading">Lecture Absence</li>
+            <li class="active-requests__item-heading">Homework Extension</li>
+        </ul>
+        <div class="requests__item-box">
+            <h2 class="active-requests__item-heading">My dog passed away</h2>
+        </div>
+        <div class="requests__item-box">
+            <h2 class="active-requests__item-heading">Mark Brown</h2>
+        </div>
+        <div class="requests__item-box">
+            <h2 class="active-requests__item-heading">Oct-10-2019</h2>
+        </div>
+        <div class="requests__item-box">
+            <h2 class="active-requests__item-heading">Oakton PHY131 D'Aquila</h2>
+        </div>
+        <ul class="requests__item-box">
+            <li><a class="active-requests__action-link" href="request.html">edit</a></li>
+            <li><a class="active-requests__action-link" href="dashboard.html">delete</a></li>
+            <li><a class="active-requests__action-link" href="dashboard.html">mark inactive</a></li>
+        </ul>
+
+        <!-- New Row -->
+        <div class="requests__item-box">
+            <h2 class="active-requests__item-heading">Needs Attention</h2>
+        </div>
+        <ul class="requests__item-box">
+            <li class="active-requests__item-heading">Lecture Absence</li>
+            <li class="active-requests__item-heading">Lab Absence</li>
+        </ul>
+        <div class="requests__item-box">
+            <h2 class="active-requests__item-heading">Going out of the country</h2>
+        </div>
+        <div class="requests__item-box">
+            <h2 class="active-requests__item-heading">Ashley Golden</h2>
+        </div>
+        <div class="requests__item-box">
+            <h2 class="active-requests__item-heading">Oct-10-2019</h2>
+        </div>
+        <div class="requests__item-box">
+            <h2 class="active-requests__item-heading">Oakton PHY131 D'Aquila</h2>
+        </div>
+        <ul class="requests__item-box">
+            <li><a class="active-requests__action-link" href="request.html">edit</a></li>
+            <li><a class="active-requests__action-link" href="dashboard.html">delete</a></li>
+            <li><a class="active-requests__action-link" href="dashboard.html">mark inactive</a></li>
+        </ul>
+
+        <!-- New Row -->
+        <div class="requests__item-box">
+            <h2 class="active-requests__item-heading">Resolved</h2>
+        </div>
+        <ul class="requests__item-box">
+            <li class="active-requests__item-heading">Lecture Absence</li>
+        </ul>
+        <div class="requests__item-box">
+            <h2 class="active-requests__item-heading">Sick</h2>
+        </div>
+        <div class="requests__item-box">
+            <h2 class="active-requests__item-heading">Michele Violet</h2>
+        </div>
+        <div class="requests__item-box">
+            <h2 class="active-requests__item-heading">Oct-10-2019</h2>
+        </div>
+        <div class="requests__item-box">
+            <h2 class="active-requests__item-heading">Oakton PHY131 D'Aquila</h2>
+        </div>
+        <ul class="requests__item-box">
+            <li><a class="active-requests__action-link" href="request.html">edit</a></li>
+            <li><a class="active-requests__action-link" href="dashboard.html">delete</a></li>
+            <li><a class="active-requests__action-link" href="dashboard.html">mark inactive</a></li>
+        </ul>
+
+    </div>
+</section>
+<section class="requests">
+    <h1 class="requests__heading--inactive">Inactive Requests</h1>
+    <div class="requests__grid">
+        <!-- Column Headers -->
+        <div class="requests__item-box">
+            <h1 class="requests__column-headings">Status</h1>
+        </div>
+        <div class="requests__item-box">
+            <h1 class="requests__column-headings">Tags</h1>
+        </div>
+        <div class="requests__item-box">
+            <h1 class="requests__column-headings">Title</h1>
+        </div>
+        <div class="requests__item-box">
+            <h1 class="requests__column-headings">Requester</h1>
+        </div>
+        <div class="requests__item-box">
+            <h1 class="requests__column-headings">Created</h1>
+        </div>
+        <div class="requests__item-box">
+            <h1 class="requests__column-headings">Group</h1>
+        </div>
+        <div class="requests__item-box">
+            <h1 class="requests__column-headings">Actions</h1>
+        </div>
+
+        <!-- New Row -->
+        <div class="requests__item-box">
+            <h2 class="active-requests__item-heading--inactive">Resolved</h2>
+        </div>
+        <ul class="requests__item-box">
+            <li class="active-requests__item-heading--inactive">Lecture Absence</li>
+            <li class="active-requests__item-heading--inactive">Lab Absence</li>
+        </ul>
+        <div class="requests__item-box">
+            <h2 class="active-requests__item-heading--inactive">I had to go the the doctor</h2>
+        </div>
+        <div class="requests__item-box">
+            <h2 class="active-requests__item-heading--inactive">Tim Green</h2>
+        </div>
+        <div class="requests__item-box">
+            <h2 class="active-requests__item-heading--inactive">Oct-10-2019</h2>
+        </div>
+        <div class="requests__item-box">
+            <h2 class="active-requests__item-heading--inactive">Oakton PHY131 D'Aquila</h2>
+        </div>
+        <ul class="requests__item-box">
+            <li><a class="active-requests__action-link" href="request.html">edit</a></li>
+            <li><a class="active-requests__action-link" href="dashboard.html">delete</a></li>
+            <li><a class="active-requests__action-link" href="dashboard.html">mark inactive</a></li>
+        </ul>
+
+
+
+    </div>
+</section>
+<footer class="footer">
+    <div class="footer__copyright">
+        <p>© 2019 Help Management System. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>

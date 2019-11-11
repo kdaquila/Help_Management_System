@@ -1,0 +1,122 @@
+@import "../partials/colors";
+@import "../partials/typography";
+@import "../partials/forms";
+@import "../partials/header";
+@import "../partials/buttons";
+@import "../partials/footer";
+
+// Resets
+@import "../partials/reset";
+
+// Layout Blocks
+.page__grid {
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  grid-template-rows: 100vh;
+}
+.intro {
+  background:
+          url("../../img/boat_in_the_sea_reverse-crop-scaleDown.jpg")
+          top right / cover
+          no-repeat ;
+}
+.login {
+  //nothing here yet
+}
+
+// Content Blocks
+.intro__contents {
+  width: 60%;
+  min-width: 400px;
+  margin: 70px auto 0 auto;
+  padding: 0;
+}
+.intro__heading {
+  font: $font-size-xlarge $font-family-sanserif;
+  margin: 0;
+  padding: 0 0 0 20px;
+  border-left: solid 2px $color-one-medium;
+  color: white;
+}
+.intro__detail-list {
+  padding: 0;
+}
+.intro__detail {
+  margin: $font-size-medium 0;
+  list-style: circle inside;
+  font: $font-size-medium $font-family-sanserif;
+  color: white;
+}
+.intro__button {
+  display: block;
+  margin: $font-size-medium 0;
+  @include button-primary;
+  padding: 10px 50px ;
+}
+
+.login__contents {
+  width: 60%;
+  margin: 70px auto 0 auto;
+}
+.login__logo {
+}
+.login__logo-heading {
+  font: $font-size-xlarge $font-family-sanserif;
+  color: $gray-dark;
+  text-align: center;
+  margin: 0;
+}
+.login__logo-subHeading {
+  font: $font-size-medium $font-family-sanserif;
+  color: $gray-medium;
+  text-align: center;
+  margin: 0;
+}
+.login__logo-art-group {
+  margin: 10px 0 0 0;
+}
+.login__logo-art-line {
+  fill: none;
+  stroke: $color-one-medium;
+  stroke-width: 2px;
+}
+.login__logo-art-diamond {
+  fill: $color-one-medium;
+  stroke: none;
+}
+.login__form {
+  margin: 18px 0 0 0;
+}
+.login__form-label {
+  display: block;
+  width: 100%;
+  margin-bottom: 9px;
+  box-sizing: border-box;
+  @include form-label-font;
+  @include form-label-color;
+}
+.login__form-input {
+  display: block;
+  width: 100%;
+  margin-bottom: 18px;
+  box-sizing: border-box;
+  @include form-section__text-input
+}
+.login__form-signIn-button {
+  display: block;
+  width: 100%;
+  margin: 20px 0;
+  @include button-primary;
+}
+.login__form-create-account-button {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  @include button-secondary;
+}
+
+
+
+
+
+

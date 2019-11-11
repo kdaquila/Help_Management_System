@@ -1,0 +1,18 @@
+@import "colors";
+@import "typography";
+
+.error-message {
+  grid-column-start: 2;
+  margin: 10px 0;
+  background-color: $color-three-light;
+  padding: 20px;
+  border-radius: 20px;
+}
+.error-message__heading {
+  font: $font-size-medium $font-family-sanserif;
+  color: $color-three-dark;
+}
+.error-message__body {
+  font: $font-size-small $font-family-sanserif;
+  color: $color-three-dark;
+}

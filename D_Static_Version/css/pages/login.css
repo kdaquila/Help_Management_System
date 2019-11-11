@@ -1,0 +1,191 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.page__grid {
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  grid-template-rows: 100vh;
+}
+
+.intro {
+  background: url("../../img/boat_in_the_sea_reverse-crop-scaleDown.jpg") top right/cover no-repeat;
+}
+
+.intro__contents {
+  width: 60%;
+  min-width: 400px;
+  margin: 70px auto 0 auto;
+  padding: 0;
+}
+
+.intro__heading {
+  font: 48px "Trebuchet MS";
+  margin: 0;
+  padding: 0 0 0 20px;
+  border-left: solid 2px #2b488c;
+  color: white;
+}
+
+.intro__detail-list {
+  padding: 0;
+}
+
+.intro__detail {
+  margin: 20px 0;
+  list-style: circle inside;
+  font: 20px "Trebuchet MS";
+  color: white;
+}
+
+.intro__button {
+  display: block;
+  margin: 20px 0;
+  font: 20px "Trebuchet MS";
+  border: none;
+  border-radius: 20px;
+  background-color: #2b488c;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  padding: 10px 50px;
+}
+
+.login__contents {
+  width: 60%;
+  margin: 70px auto 0 auto;
+}
+
+.login__logo-heading {
+  font: 48px "Trebuchet MS";
+  color: #2d2d2d;
+  text-align: center;
+  margin: 0;
+}
+
+.login__logo-subHeading {
+  font: 20px "Trebuchet MS";
+  color: #858181;
+  text-align: center;
+  margin: 0;
+}
+
+.login__logo-art-group {
+  margin: 10px 0 0 0;
+}
+
+.login__logo-art-line {
+  fill: none;
+  stroke: #2b488c;
+  stroke-width: 2px;
+}
+
+.login__logo-art-diamond {
+  fill: #2b488c;
+  stroke: none;
+}
+
+.login__form {
+  margin: 18px 0 0 0;
+}
+
+.login__form-label {
+  display: block;
+  width: 100%;
+  margin-bottom: 9px;
+  box-sizing: border-box;
+  font: 20px "Trebuchet MS";
+  color: #2d2d2d;
+}
+
+.login__form-input {
+  display: block;
+  width: 100%;
+  margin-bottom: 18px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: solid 2px #2b488c;
+  color: #2d2d2d;
+  font: 20px "Trebuchet MS";
+  padding: 10px;
+}
+
+.login__form-signIn-button {
+  display: block;
+  width: 100%;
+  margin: 20px 0;
+  font: 20px "Trebuchet MS";
+  border: none;
+  border-radius: 20px;
+  background-color: #2b488c;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.login__form-create-account-button {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  font: 20px "Trebuchet MS";
+  border: solid 2px #2b488c;
+  border-radius: 20px;
+  background-color: transparent;
+  color: #2b488c;
+  padding: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+
+/*# sourceMappingURL=login.css.map */

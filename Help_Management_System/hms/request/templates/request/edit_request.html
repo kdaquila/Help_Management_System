@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HMS - Request</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'request/css/pages/edit_request.css'%}" />
+    <link rel="shortcut icon" href="{% static 'request/img/favicon.ico'%}" />
+</head>
+<body>
+<header class="header">
+    {% include 'request/partials/_header__logo.html' %}
+    {% include 'request/partials/_header__nav.html' %}
+    {% include 'request/partials/_header__login-status.html' %}
+</header>
+<form class="form" action="{% url 'edit_request' %}" method="post">
+    {% if request.id %}
+        <input type="hidden" name="request_id" value="{{ request.id }}">
+    {% endif %}
+    {% if error_message %}
+        {% include 'request/partials/_error-message.html' %}
+    {% endif %}
+    {% csrf_token %}
+    {% include 'request/partials/_form__status-section.html' %}
+    {% include 'request/partials/_form__details-section.html' %}
+    {% include 'request/partials/_form__response-section.html' %}
+    <div class="form__buttons-container">
+        <button class="form__submit-button" type="submit">Submit</button>
+        <a class="form__cancel-button" href="{% url 'dashboard' %}">Cancel</a>
+    </div>
+    {% include 'request/partials/_form__submit-warning.html' %}
+</form>
+{% include 'request/partials/_footer.html' %}
+</body>
+</html>

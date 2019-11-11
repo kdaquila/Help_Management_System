@@ -1,0 +1,158 @@
+@import "../partials/colors";
+@import "../partials/typography";
+@import "../partials/forms";
+@import "../partials/header";
+@import "../partials/buttons";
+@import "../partials/footer";
+@import "../partials/error";
+
+// Resets
+@import "../partials/reset";
+
+// Layout Blocks
+.header {
+  display: grid;
+  grid-template-columns: 200px auto 20%;
+  align-items: center;
+}
+.form {
+  display: grid;
+  grid-template-columns: auto 50% auto;
+}
+.footer {
+  @include footer;
+}
+
+// Content Blocks
+.header__logo {
+  @include header-logo;
+}
+.header__logo-heading {
+  @include header-logo__heading;
+}
+.header__logo-subHeading {
+  @include header-logo__subHeading;
+}
+.header__logo-art-group {
+  @include header-logo__art-group;
+}
+.header__logo-art-line {
+  @include header-logo__art-line;
+}
+.header__logo-art-diamond {
+  @include header-logo__art-diamond;
+}
+.header__nav {
+  @include header-nav;
+}
+.header__nav-item {
+  @include header-nav-item;
+}
+.header__nav-item a {
+  @include header-nav-item-link;
+}
+.header__nav-item a:hover {
+  @include header-nav-item-link--hover;
+}
+.header-login-status {
+  @include header-login-status;
+}
+.header-login-status__message {
+  @include header-login-status__message;
+}
+.header-login-status__logout-button {
+  @include header-login-status__logout-button;
+}
+
+.form__status-section {
+  grid-column-start: 2;
+  margin: 30px 0;
+}
+.form__status-title {
+  @include form-section__title;
+}
+.form__status-grid {
+  display: grid;
+  grid-template-columns: 1fr 5fr 4fr;
+  align-items: center;
+  justify-items: start;
+  row-gap: 20px;
+  column-gap: 20px;
+}
+.form__status-grid-item-icon {
+  width: 50px;
+  margin-right: 20px;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-miterlimit:1.5;
+  fill:none;
+  stroke:$color-one-medium;
+  stroke-width:4px;
+}
+.form__status-grid-item-heading {
+  margin: 0;
+  font: $font-size-medium $font-family-sanserif;
+  color: $gray-dark;
+}
+.form__status-grid-item-subheading {
+  margin: 0;
+  font: $font-size-small $font-family-sanserif;
+  color: $gray-medium;
+}
+.form__status-grid-item-radio {
+  margin: 0;
+  padding: 0;
+}
+.form__details-section {
+  grid-column-start: 2;
+  margin: 30px 0;
+}
+.form__details-title {
+  @include form-section__title;
+}
+.form__details-grid {
+  @include form-section__grid;
+}
+.form__details-label {
+  @include form-section__label;
+}
+.form__details-text-input {
+  @include form-section__text-input;
+}
+.form__details-file-input {
+  @include form-section__file-input;
+}
+.form__response-section {
+  grid-column-start: 2;
+  margin: 30px 0;
+}
+.form__response-title {
+  @include form-section__title;
+}
+.form__response-grid {
+  @include form-section__grid;
+}
+.form__response-label {
+  @include form-section__label;
+}
+.form__response-text-input {
+  @include form-section__text-input;
+}
+.form__buttons-container {
+  @include form-buttons__container;
+}
+.form__submit-button {
+  @include form-buttons__submit;
+}
+.form__cancel-button {
+  @include form-buttons__cancel;
+}
+.form__submit-warning {
+  grid-column-start: 2;
+  margin: -10px 0 0 0;
+  font: $font-size-small $font-family-sanserif;
+}
+
+.footer__copyright {
+  @include footer-copyright;
+}

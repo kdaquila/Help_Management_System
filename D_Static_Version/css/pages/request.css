@@ -1,0 +1,301 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 200px auto 20%;
+  align-items: center;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: auto 50% auto;
+}
+
+.footer {
+  background-color: #dddddd;
+  padding: 30px;
+  margin: 30px 0 0 0;
+}
+
+.header__logo {
+  text-decoration: none;
+  margin: 20px;
+}
+
+.header__logo-heading {
+  font: 20px "Trebuchet MS";
+  color: #2d2d2d;
+  text-align: center;
+  margin: 0;
+}
+
+.header__logo-subHeading {
+  font: 12px "Trebuchet MS";
+  color: #858181;
+  text-align: center;
+  margin: 0;
+}
+
+.header__logo-art-group {
+  margin: 1px 0 0 0;
+}
+
+.header__logo-art-line {
+  fill: none;
+  stroke: #2b488c;
+  stroke-width: 2px;
+}
+
+.header__logo-art-diamond {
+  fill: #2b488c;
+  stroke: none;
+}
+
+.header__nav {
+  padding: 0;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__nav-item {
+  display: block;
+  margin: 0 20px;
+}
+
+.header__nav-item a {
+  font: 20px "Trebuchet MS";
+  text-decoration: none;
+  color: #858181;
+}
+
+.header__nav-item a:hover {
+  color: #2b488c;
+}
+
+.header-login-status__message {
+  margin: 0;
+  font: 12px "Trebuchet MS";
+  color: #2b488c;
+}
+
+.header-login-status__logout-button {
+  margin: 0;
+  text-decoration: none;
+  font: 12px "Trebuchet MS";
+  color: #858181;
+}
+
+.form__status-section {
+  grid-column-start: 2;
+  margin: 30px 0;
+}
+
+.form__status-title {
+  font: 36px "Trebuchet MS";
+  color: #2d2d2d;
+}
+
+.form__status-grid {
+  display: grid;
+  grid-template-columns: 1fr 5fr 4fr;
+  align-items: center;
+  justify-items: start;
+  row-gap: 20px;
+  column-gap: 20px;
+}
+
+.form__status-grid-item-icon {
+  width: 50px;
+  margin-right: 20px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 1.5;
+  fill: none;
+  stroke: #2b488c;
+  stroke-width: 4px;
+}
+
+.form__status-grid-item-heading {
+  margin: 0;
+  font: 20px "Trebuchet MS";
+  color: #2d2d2d;
+}
+
+.form__status-grid-item-subheading {
+  margin: 0;
+  font: 12px "Trebuchet MS";
+  color: #858181;
+}
+
+.form__status-grid-item-radio {
+  margin: 0;
+  padding: 0;
+}
+
+.form__details-section {
+  grid-column-start: 2;
+  margin: 30px 0;
+}
+
+.form__details-title {
+  font: 36px "Trebuchet MS";
+  color: #2d2d2d;
+}
+
+.form__details-grid {
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  align-items: center;
+}
+
+.form__details-label {
+  font: 20px "Trebuchet MS";
+  color: #2d2d2d;
+}
+
+.form__details-text-input {
+  border-radius: 5px;
+  border: solid 2px #2b488c;
+  color: #2d2d2d;
+  font: 20px "Trebuchet MS";
+  padding: 10px;
+}
+
+.form__details-file-input {
+  border-radius: 5px;
+  border: solid 2px #2b488c;
+  color: #2d2d2d;
+  font: 20px "Trebuchet MS";
+  padding: 10px;
+}
+
+.form__response-section {
+  grid-column-start: 2;
+  margin: 30px 0;
+}
+
+.form__response-title {
+  font: 36px "Trebuchet MS";
+  color: #2d2d2d;
+}
+
+.form__response-grid {
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  align-items: center;
+}
+
+.form__response-label {
+  font: 20px "Trebuchet MS";
+  color: #2d2d2d;
+}
+
+.form__response-text-input {
+  border-radius: 5px;
+  border: solid 2px #2b488c;
+  color: #2d2d2d;
+  font: 20px "Trebuchet MS";
+  padding: 10px;
+}
+
+.form__buttons-container {
+  grid-column-start: 2;
+  margin: 30px 0;
+  display: grid;
+  grid-template-columns: 4fr 4fr 4fr;
+  grid-column-gap: 20px;
+}
+
+.form__submit-button {
+  font: 20px "Trebuchet MS";
+  border: none;
+  border-radius: 20px;
+  background-color: #2b488c;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.form__cancel-button {
+  font: 20px "Trebuchet MS";
+  border: solid 2px #2b488c;
+  border-radius: 20px;
+  background-color: transparent;
+  color: #2b488c;
+  padding: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+
+.form__submit-warning {
+  grid-column-start: 2;
+  margin: -10px 0 0 0;
+  font: 12px "Trebuchet MS";
+}
+
+.footer__copyright {
+  margin: 10px;
+  font: 12px "Trebuchet MS";
+  color: #2d2d2d;
+}
+
+/*# sourceMappingURL=request.css.map */

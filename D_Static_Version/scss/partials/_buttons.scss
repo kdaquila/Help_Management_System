@@ -1,0 +1,49 @@
+@import "colors";
+@import "typography";
+
+@mixin button-primary-background-color {
+  background-color: $color-one-medium;
+}
+@mixin button-primary-text-color {
+  color: white;
+}
+@mixin button-primary-border {
+  border: none;
+  border-radius: 20px;
+}
+@mixin button-primary-font {
+  font: $font-size-medium $font-family-sanserif;
+}
+
+@mixin button-secondary-background-color {
+  background-color: transparent;
+}
+@mixin button-secondary-text-color {
+  color: $color-one-medium;
+}
+@mixin button-secondary-border {
+  border: solid 2px $color-one-medium;
+  border-radius: 20px;
+}
+@mixin button-secondary-font {
+  font: $font-size-medium $font-family-sanserif;
+}
+
+@mixin button-primary {
+  @include button-primary-font;
+  @include button-primary-border;
+  @include button-primary-background-color;
+  @include button-primary-text-color;
+  padding: 10px;
+  cursor: pointer;
+}
+@mixin button-secondary {
+  @include button-secondary-font;
+  @include button-secondary-border;
+  @include button-secondary-background-color;
+  @include button-secondary-text-color;
+  padding: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}

@@ -1,0 +1,14 @@
+@import "colors";
+@import "typography";
+
+@mixin footer {
+  background-color: $gray-light;
+  padding: 30px;
+  margin: 30px 0 0 0;
+}
+
+@mixin footer-copyright {
+  margin: 10px;
+  font: $font-size-small $font-family-sanserif;
+  color: $gray-dark;
+}

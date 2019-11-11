@@ -1,0 +1,11 @@
+<svg width="100%"
+     height="100%"
+     viewBox="0 0 424 26"
+     style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <path d="M422.683,12.938l-421.683,0"
+          style="fill:none;
+                stroke:#2534b3;
+                stroke-width:2px;"/>
+    <path d="M211.842,0l24.75,12.938l-24.75,12.938l-24.75,-12.938l24.75,-12.938Z"
+          style="fill:#2534b3;"/>
+</svg>

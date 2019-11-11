@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HMS - Login</title>
+    {%load static %}
+    <link rel="stylesheet" href="{% static 'request/css/pages/login.css' %}">
+    <link rel="shortcut icon" href= "{% static 'request/img/favicon.ico' %}"/>
+</head>
+<body class="page__grid">
+    <section class="intro">
+        <div class="intro__contents">
+            <h1 class="intro__heading">You won't be left<br>Stranded</h1>
+            <ol class="intro__detail-list">
+                <li class="intro__detail">Request help online</li>
+                <li class="intro__detail">Monitor the status of your requests</li>
+                <li class="intro__detail">Get feedback and follow-up steps</li>
+            </ol>
+        </div>
+    </section>
+    <section class="login">
+        <div class="login__contents">
+            <div class="login__logo">
+                <h1 class="login__logo-heading">HMS</h1>
+                <h2 class="login__logo-subHeading">Help Management System</h2>
+                <svg class="login__logo-art-group" viewBox="0 0 424 26">
+                    <path class="login__logo-art-line" d="M422.683,12.938l-421.683,0"></path>
+                    <path class="login__logo-art-diamond" d="M211.842,0l24.75,12.938l-24.75,12.938l-24.75,-12.938l24.75,-12.938Z"></path>
+                </svg>
+            </div>
+            <form class="login__form" action="{% url 'login' %}" method="post">
+                {% if error_message %}
+                    {% include 'request/partials/_error-message.html' %}
+                {% endif %}
+                {% csrf_token %}
+                <label class="login__form-label" for="email">Email</label>
+                <input class="login__form-input" type="text" name="email" id="email">
+
+                <label class="login__form-label" for="password">Password</label>
+                <input class="login__form-input" type="password" name="password" id="password">
+
+                <button type="submit" class="login__form-signIn-button">Sign In</button>
+                <a class="login__form-create-account-button" href="{% url 'create_account' %}">Create New Account</a>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

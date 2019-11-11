@@ -1,0 +1,104 @@
+@import "../partials/colors";
+@import "../partials/typography";
+@import "../partials/forms";
+@import "../partials/header";
+@import "../partials/buttons";
+@import "../partials/footer";
+
+// Resets
+@import "../partials/reset";
+
+// Layout Blocks
+.header {
+  display: grid;
+  grid-template-columns: 200px auto 20%;
+  align-items: center;
+}
+.requests {
+  margin: 20px;
+}
+.footer {
+  @include footer;
+}
+
+// Content Blocks
+.header__logo {
+  @include header-logo;
+}
+.header__logo-heading {
+  @include header-logo__heading;
+}
+.header__logo-subHeading {
+  @include header-logo__subHeading;
+}
+.header__logo-art-group {
+  @include header-logo__art-group;
+}
+.header__logo-art-line {
+  @include header-logo__art-line;
+}
+.header__logo-art-diamond {
+  @include header-logo__art-diamond;
+}
+.header__nav {
+  @include header-nav;
+}
+.header__nav-item {
+  @include header-nav-item;
+}
+.header__nav-item a {
+  @include header-nav-item-link;
+}
+.header__nav-item a:hover {
+  @include header-nav-item-link--hover;
+}
+.header-login-status {
+  @include header-login-status;
+}
+.header-login-status__message {
+  @include header-login-status__message;
+}
+.header-login-status__logout-button {
+  @include header-login-status__logout-button;
+}
+
+.requests__heading {
+  font: $font-size-large $font-family-sanserif;
+  color: $gray-dark;
+}
+.requests__heading--inactive {
+  font: $font-size-large $font-family-sanserif;
+  color: $gray-medium;
+}
+.requests__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: 20px;
+  margin: 20px 0 0 0;
+}
+.requests__column-headings {
+  font: $font-size-medium $font-family-sanserif;
+  color: $gray-medium;
+}
+.requests__item-box {
+  border-bottom: solid 1px $gray-light;
+}
+.active-requests__item-heading {
+  font: $font-size-small $font-family-sanserif;
+  color: $gray-dark;
+}
+.active-requests__item-heading--inactive {
+  font: $font-size-small $font-family-sanserif;
+  color: $gray-medium;
+}
+.active-requests__action-link {
+  font: $font-size-small $font-family-sanserif;
+  display: block;
+  text-decoration: none;
+  color: $color-one-medium;
+  margin: 0 0 10px 0;
+}
+
+.footer__copyright {
+  @include footer-copyright;
+}

@@ -1,0 +1,66 @@
+@import "colors";
+@import "typography";
+
+@mixin header-logo {
+  text-decoration: none;
+  margin: 20px;
+}
+@mixin header-logo__heading {
+  font: $font-size-medium $font-family-sanserif;
+  color: $gray-dark;
+  text-align: center;
+  margin: 0;
+}
+@mixin header-logo__subHeading {
+  font: $font-size-small $font-family-sanserif;
+  color: $gray-medium;
+  text-align: center;
+  margin: 0;
+}
+@mixin header-logo__art-group {
+  margin: 1px 0 0 0;
+}
+@mixin header-logo__art-line {
+  fill: none;
+  stroke: $color-one-medium;
+  stroke-width: 2px;
+}
+@mixin header-logo__art-diamond {
+  fill: $color-one-medium;
+  stroke: none;
+}
+
+@mixin header-nav {
+  padding: 0;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin header-nav-item {
+  display: block;
+  margin: 0 20px;
+}
+@mixin header-nav-item-link  {
+  font: $font-size-medium $font-family-sanserif;
+  text-decoration: none;
+  color: $gray-medium;
+}
+@mixin header-nav-item-link--hover {
+  color: $color-one-medium;
+}
+
+@mixin header-login-status {
+  // nothing yet
+}
+@mixin header-login-status__message {
+  margin: 0;
+  font: $font-size-small $font-family-sanserif;
+  color: $color-one-medium;
+}
+@mixin header-login-status__logout-button {
+  margin: 0;
+  text-decoration: none;
+  font: $font-size-small $font-family-sanserif;
+  color: $gray-medium;
+}

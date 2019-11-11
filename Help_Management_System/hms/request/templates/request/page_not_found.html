@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HMS - Page Not Found</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'request/css/pages/about.css' %}" />
+    <link rel="shortcut icon" href="{% static 'request/img/favicon.ico' %}" />
+</head>
+<body class="page__grid">
+<header class="header">
+    {% include 'request/partials/_header__logo.html' %}
+</header>
+<main class="about">
+    <h1 class="about__heading">Page Not Found</h1>
+    <p class="about__text">Please try something else. <a href="{% url "login" %}">Back to Login</a> </p>
+</main>
+{% include 'request/partials/_footer.html' %}
+</body>
+</html>

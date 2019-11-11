@@ -1,0 +1,172 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 20% auto 20%;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: auto 60% auto;
+}
+
+.footer {
+  background-color: #dddddd;
+  padding: 30px;
+  margin: 30px 0 0 0;
+}
+
+.header__logo {
+  text-decoration: none;
+  margin: 20px;
+}
+
+.header__logo-heading {
+  font: 20px "Trebuchet MS";
+  color: #2d2d2d;
+  text-align: center;
+  margin: 0;
+}
+
+.header__logo-subHeading {
+  font: 12px "Trebuchet MS";
+  color: #858181;
+  text-align: center;
+  margin: 0;
+}
+
+.header__logo-art-group {
+  margin: 1px 0 0 0;
+}
+
+.header__logo-art-line {
+  fill: none;
+  stroke: #2b488c;
+  stroke-width: 2px;
+}
+
+.header__logo-art-diamond {
+  fill: #2b488c;
+  stroke: none;
+}
+
+.form__new-account-section {
+  grid-column-start: 2;
+}
+
+.form__new-account-title {
+  font: 36px "Trebuchet MS";
+}
+
+.form__new-account-label {
+  display: block;
+  font: 20px "Trebuchet MS";
+  color: #2d2d2d;
+}
+
+.form__new-account-text-input {
+  display: block;
+  padding: 10px;
+  font: 20px "Trebuchet MS";
+  color: #2d2d2d;
+  border-radius: 5px;
+  border: solid 2px #2b488c;
+}
+
+.form__new-account-grid {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-row-gap: 20px;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.form__buttons-container {
+  grid-column-start: 2;
+  margin: 30px 0;
+  display: grid;
+  grid-template-columns: 4fr 4fr 4fr;
+  grid-column-gap: 20px;
+}
+
+.form__submit-button {
+  font: 20px "Trebuchet MS";
+  border: none;
+  border-radius: 20px;
+  background-color: #2b488c;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.form__cancel-button {
+  font: 20px "Trebuchet MS";
+  border: solid 2px #2b488c;
+  border-radius: 20px;
+  background-color: transparent;
+  color: #2b488c;
+  padding: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+
+.footer__copyright {
+  margin: 10px;
+  font: 12px "Trebuchet MS";
+  color: #2d2d2d;
+}
+
+/*# sourceMappingURL=createAccount.css.map */

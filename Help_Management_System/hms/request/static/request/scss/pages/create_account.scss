@@ -1,0 +1,82 @@
+@import "../partials/colors";
+@import "../partials/typography";
+@import "../partials/forms";
+@import "../partials/header";
+@import "../partials/buttons";
+@import "../partials/footer";
+@import "../partials/error";
+
+// Resets
+@import "../partials/reset";
+
+// Layout Blocks
+.header {
+  display: grid;
+  grid-template-columns: 20% auto 20%;
+}
+.form {
+  display: grid;
+  grid-template-columns: auto 60% auto;
+}
+.footer {
+  @include footer;
+}
+
+// Content Blocks
+.header__logo {
+  @include header-logo;
+}
+.header__logo-heading {
+  @include header-logo__heading;
+}
+.header__logo-subHeading {
+  @include header-logo__subHeading;
+}
+.header__logo-art-group {
+  @include header-logo__art-group;
+}
+.header__logo-art-line {
+  @include header-logo__art-line;
+}
+.header__logo-art-diamond {
+  @include header-logo__art-diamond;
+}
+
+.form__new-account-section {
+  grid-column-start: 2;
+}
+.form__new-account-title {
+  font: $font-size-large $font-family-sanserif;
+}
+.form__new-account-label {
+  display: block;
+  @include form-label-font;
+  @include form-label-color;
+}
+.form__new-account-text-input {
+  display: block;
+  padding: 10px;
+  @include form-input-font;
+  @include form-input-color;
+  @include form-input-border;
+}
+.form__new-account-grid {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-row-gap: $font-size-medium;
+  align-items: center;
+  margin: 30px 0;
+}
+.form__buttons-container {
+  @include form-buttons__container;
+}
+.form__submit-button {
+  @include form-buttons__submit;
+}
+.form__cancel-button {
+  @include form-buttons__cancel;
+}
+
+.footer__copyright {
+  @include footer-copyright;
+}

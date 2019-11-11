@@ -1,0 +1,19 @@
+<section class="form__details-section">
+        <h1 class="form__details-title">Details</h1>
+        <div class="form__details-grid">
+            <label class="form__details-label" for="details-groupID">Group ID</label>
+            <input class="form__details-text-input" type="text" name="groupID" id="details-groupID" value="{{ group_id }}">
+            <label class="form__details-label" for="details-tags">Tag</label>
+            <select class="form__details-text-input" name="details-tags" id="details-tags" multiple>
+                {% for tag in tags %}
+                    <option value="{{tag}}" {% if tag in request_tags_names %} selected {% endif %}>{{tag}}</option>
+                {% endfor %}
+            </select>
+            <label class="form__details-label" for="request-title">Title</label>
+            <input class="form__details-text-input" type="text" name="request-title" id="request-title" value="{{ request.title }}">
+            <label class="form__details-label" for="details-message">Message</label>
+            <input class="form__details-text-input" type="text" name="request-message" id="details-message" value="{{ request.request_message }}">
+            <label class="form__details-label" for="details-newFile">Documentation</label>
+            <input class="form__details-file-input" type="file" name="request-newFile" id="details-newFile">
+        </div>
+    </section>

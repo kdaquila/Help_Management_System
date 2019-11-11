@@ -1,0 +1,167 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.page__grid {
+  display: grid;
+  grid-template-rows: fit-content(100%) fit-content(100%) auto fit-content(100%);
+  height: 100vh;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 200px auto 20%;
+  align-items: center;
+}
+
+.about {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.footer {
+  grid-row-start: 4;
+  background-color: #dddddd;
+  padding: 30px;
+  margin: 30px 0 0 0;
+}
+
+.header__logo {
+  text-decoration: none;
+  margin: 20px;
+}
+
+.header__logo-heading {
+  font: 20px "Trebuchet MS";
+  color: #2d2d2d;
+  text-align: center;
+  margin: 0;
+}
+
+.header__logo-subHeading {
+  font: 12px "Trebuchet MS";
+  color: #858181;
+  text-align: center;
+  margin: 0;
+}
+
+.header__logo-art-group {
+  margin: 1px 0 0 0;
+}
+
+.header__logo-art-line {
+  fill: none;
+  stroke: #2b488c;
+  stroke-width: 2px;
+}
+
+.header__logo-art-diamond {
+  fill: #2b488c;
+  stroke: none;
+}
+
+.header__nav {
+  padding: 0;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__nav-item {
+  display: block;
+  margin: 0 20px;
+}
+
+.header__nav-item a {
+  font: 20px "Trebuchet MS";
+  text-decoration: none;
+  color: #858181;
+}
+
+.header__nav-item a:hover {
+  color: #2b488c;
+}
+
+.header-login-status__message {
+  margin: 0;
+  font: 12px "Trebuchet MS";
+  color: #2b488c;
+}
+
+.header-login-status__logout-button {
+  margin: 0;
+  text-decoration: none;
+  font: 12px "Trebuchet MS";
+  color: #858181;
+}
+
+.about__heading {
+  margin: 30px 0 10px 0;
+  font: 36px "Trebuchet MS";
+  color: #2d2d2d;
+}
+
+.about__text {
+  margin: 0;
+  font: 20px "Trebuchet MS";
+  color: #2d2d2d;
+}
+
+.footer__copyright {
+  margin: 10px;
+  font: 12px "Trebuchet MS";
+  color: #2d2d2d;
+}
+
+/*# sourceMappingURL=about.css.map */

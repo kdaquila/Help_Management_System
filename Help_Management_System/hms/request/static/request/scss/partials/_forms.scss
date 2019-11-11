@@ -1,0 +1,67 @@
+@import "colors";
+@import "typography";
+
+@mixin form-input-font {
+  font: $font-size-medium $font-family-sanserif;
+}
+@mixin form-input-color {
+  color: $gray-dark;
+}
+@mixin form-input-border {
+  border-radius: 5px;
+  border: solid 2px $color-one-medium;
+}
+
+@mixin form-label-font {
+  font: $font-size-medium $font-family-sanserif;
+}
+@mixin form-label-color {
+  color: $gray-dark;
+}
+
+@mixin form-section__title {
+  font: $font-size-large $font-family-sanserif;
+  color: $gray-dark;
+}
+@mixin form-section__grid {
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  align-items: center;
+}
+@mixin form-section__item {
+  display: flex;
+  justify-items: flex-start;
+  align-items: center;
+}
+@mixin form-section__label {
+  @include form-label-font;
+  @include form-label-color;
+}
+@mixin form-section__text-input {
+  @include form-input-border;
+  @include form-input-color;
+  @include form-input-font;
+  padding: 10px;
+}
+@mixin form-section__file-input {
+  @include form-input-border;
+  @include form-input-color;
+  font: $font-size-small $font-family-sanserif;
+  padding: 10px;
+}
+
+@mixin form-buttons__container {
+  grid-column-start: 2;
+  margin: 30px 0;
+  display: grid;
+  grid-template-columns: 4fr 4fr 4fr;
+  grid-column-gap: 20px;
+}
+@mixin form-buttons__submit {
+  @include button-primary;
+}
+@mixin form-buttons__cancel {
+  @include button-secondary;
+}

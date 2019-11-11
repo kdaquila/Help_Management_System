@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HMS - Log out</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'request/css/pages/about.css' %}" />
+    <link rel="shortcut icon" href="{% static 'request/img/favicon.ico' %}" />
+</head>
+<body class="page__grid">
+<header class="header">
+    {% include 'request/partials/_header__logo.html' %}
+</header>
+<main class="about">
+    <h1 class="about__heading">Log out Successful</h1>
+    <p class="about__text">You are now logged out. <a href="{% url "login" %}">Back to Login</a> </p>
+</main>
+{% include 'request/partials/_footer.html' %}
+</body>
+</html>

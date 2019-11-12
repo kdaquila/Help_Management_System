@@ -1,5 +1,3 @@
-from datetime import datetime
-
 from django.core.exceptions import ValidationError, ObjectDoesNotExist
 from django.shortcuts import render, redirect
 from django.views.decorators.cache import cache_control
@@ -143,9 +141,8 @@ def delete_request(request):
     request_object = Request.objects.get(id=request.POST.get('request_id', None))
 
     # delete existing request
-    if request.POST.get("delete_request", None) == "True":
-        request_object.delete()
-        return redirect('dashboard')
+    request_object.delete()
+    return redirect('dashboard')
 
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
@@ -161,10 +158,9 @@ def activate_request(request):
     request_object = Request.objects.get(id=request.POST.get('request_id', None))
 
     # activate existing request
-    if request.POST.get("activate_request", None) == "True":
-        request_object.active = "True"
-        request_object.save()
-        return redirect('dashboard')
+    request_object.active = "True"
+    request_object.save()
+    return redirect('dashboard')
 
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
@@ -180,10 +176,9 @@ def deactivate_request(request):
     request_object = Request.objects.get(id=request.POST.get('request_id', None))
 
     # deactivate existing requests
-    if request.POST.get("deactivate_request", None) == "True":
-        request_object.active = "False"
-        request_object.save()
-        return redirect('dashboard')
+    request_object.active = "False"
+    request_object.save()
+    return redirect('dashboard')
 
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)

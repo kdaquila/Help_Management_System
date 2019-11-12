@@ -72,7 +72,6 @@
             <li>
                 <form action="{% url 'delete_request' %}" method="post">
                     {% csrf_token %}
-                    <input type="hidden" name="delete_request" value="True">
                     <input type="hidden" name="request_id" value="{{ request.id }}">
                     <input class="active-requests__action-link" type="submit" value="delete">
                 </form>
@@ -80,7 +79,6 @@
             <li>
                 <form action="{% url 'deactivate_request' %}" method="post">
                     {% csrf_token %}
-                    <input type="hidden" name="deactivate_request" value="True">
                     <input type="hidden" name="request_id" value="{{ request.id }}">
                     <input class="active-requests__action-link" type="submit" value="mark inactive">
                 </form>
@@ -153,7 +151,7 @@
                 </form>
             </li>
             <li>
-                <form action="{% url 'activate_request_request' %}" method="post">
+                <form action="{% url 'activate_request' %}" method="post">
                     {% csrf_token %}
                     <input type="hidden" name="request_id" value="{{ request.id }}">
                     <input class="active-requests__action-link" type="submit" value="mark active">
